@@ -53,7 +53,46 @@ header {
 
 
 /* MAIN */
+input {
+	display: block;
+	margin: 0 auto 3vh;
+}
 
+input[type="text"] {
+	border: none;
+	border-bottom: 1px black solid;
+	background-color: transparent;
+	font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 1em;
+	text-align: center;
+}
+
+input[type="text"]:focus {
+	border-bottom-color: #ECECEC;
+	font-weight: bold;
+}
+
+main {
+	padding-top: 10vh;
+}
+
+#display {
+	margin: 0 10vw;
+	border: 4px #ECECEC solid;
+	border-radius: 10px;
+}
+
+#form-submit {
+	border: 2px #56C9BC solid;
+	border-radius: 5px;
+	font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+	font-size: 1.2em;
+}
+
+#form-submit:active {
+	border-color: pink;
+	background-color: aliceblue;
+}
 
 
 /* FOOTER */
