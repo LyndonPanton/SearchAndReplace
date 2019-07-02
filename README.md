@@ -18,3 +18,6 @@
 > 2. The browser must have JavaScript available and enabled
 
 ## Errors
+
+## Extra Information
+> 1. This was done for one of the activites in freecodecamp's Intermediate Algorithm Scripting section
