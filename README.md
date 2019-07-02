@@ -23,7 +23,7 @@
 ## Extra Information
 > 1. This was done for one of the activites in freecodecamp's Intermediate Algorithm Scripting section
 
-## Preview
+## Preview
 ![Screenshot 1](./img/screenshot1.png)
 ![Screenshot 2](./img/screenshot2.png)
 ![Screenshot 3](./img/screenshot3.png)
