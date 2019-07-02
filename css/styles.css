@@ -40,6 +40,7 @@ header {
 }
 
 #chevron {
+	transform: scale(2, 1);
 	padding-bottom: 1vh;
 }
 
