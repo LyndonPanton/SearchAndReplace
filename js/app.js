@@ -18,13 +18,34 @@ window.onload = function(event) {
 		} else if (after.indexOf(" ") > -1) {
 			display("???", "???", "???", "Replace field must not contain spaces");
 		} else {
-			let newStr = string.split(" ");
-			let index = newStr.indexOf(before);
+			// first instance version
+			// let newStr = string.split(" ");
+			// let index = newStr.indexOf(before);
 
-			if (before[0].toUpperCase() === before[0]) {
-				newStr[index] = after[0].toUpperCase() + after.slice(1);
-			} else {
-				newStr[index] = after;
+			// if (before[0].toUpperCase() === before[0]) {
+			// 	newStr[index] = after[0].toUpperCase() + after.slice(1);
+			// } else {
+			// 	newStr[index] = after;
+			// }
+
+			// display(string, before, after, newStr.join(" "));
+
+			// all instances version
+			let i = 0;
+			let newStr = string.split(" ");
+
+			while (i < newStr.length) {
+				let index = newStr.indexOf(before, i);
+
+				if (index === -1) {
+					break;
+				} else {
+					if (before[0].toUpperCase() === before[0]) {
+						newStr[index] = after[0].toUpperCase() + after.slice(1);
+					} else {
+						newStr[index] = after;
+					}
+				}
 			}
 
 			display(string, before, after, newStr.join(" "));
