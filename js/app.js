@@ -3,13 +3,20 @@
 window.onload = function(event) {
 	document.getElementById("copyright-year").textContent = (new Date()).getFullYear();
 
+	function display(oldString, search, replace, newString) {
+		document.getElementById("string-value").textContent = oldString;
+		document.getElementById("search-value").textContent = search;
+		document.getElementById("replace-value").textContent = replace;
+		document.getElementById("result-value").textContent = newString;
+	}
+
 	function replace(string, before, after) {
 		if (!string || !before || !after) {
-			return "Input fields must not be empty";
+			display("???", "???", "???", "Input fields must not be empty");
 		} else if (before.indexOf(" ") > -1) {
-			return "Search field must not contain spaces";
+			display("???", "???", "???", "Search field must not contain spaces");
 		} else if (after.indexOf(" ") > -1) {
-			return "Replace field must not contain spaces";
+			display("???", "???", "???", "Replace field must not contain spaces");
 		} else {
 			let newStr = string.split(" ");
 			let index = newStr.indexOf(before);
@@ -20,7 +27,7 @@ window.onload = function(event) {
 				newStr[index] = after;
 			}
 
-			return newStr.join(" ");
+			display(string, before, after, newStr.join(" "));
 		}
 	}
 
@@ -56,5 +63,7 @@ window.onload = function(event) {
 	let form = document.getElementById("form");
 	form.addEventListener("submit", function(event) {
 		event.preventDefault();
+
+		replace(this.children[0].value, this.children[1].value, this.children[2].value);
 	});
 };
