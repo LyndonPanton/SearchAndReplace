@@ -3,6 +3,27 @@
 window.onload = function(event) {
 	document.getElementById("copyright-year").textContent = (new Date()).getFullYear();
 
+	function replace(string, before, after) {
+		if (!string || !before || !after) {
+			return "Input fields must not be empty";
+		} else if (before.indexOf(" ") > -1) {
+			return "Search field must not contain spaces";
+		} else if (after.indexOf(" ") > -1) {
+			return "Replace field must not contain spaces";
+		} else {
+			let newStr = string.split(" ");
+			let index = newStr.indexOf(before);
+
+			if (before[0].toUpperCase() === before[0]) {
+				newStr[index] = after[0].toUpperCase() + after.slice(1);
+			} else {
+				newStr[index] = after;
+			}
+
+			return newStr.join(" ");
+		}
+	}
+
 	function toggle(chevron) {
 		let task = document.getElementById("task");
 
